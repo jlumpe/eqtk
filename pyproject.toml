@@ -38,5 +38,16 @@ homepage = "https://eqtk.github.io/"
 source = "https://github.com/justinbois/eqtk"
 
 
+[project.optional-dependencies]
+numba = [
+    "numba",
+    "scipy",  # Required for Numba's linear algebra functions
+]
+test = [
+    "pytest",
+    "hypothesis",
+]
+
+
 [tool.setuptools.dynamic]
 version = {attr = "eqtk.__version__"}
