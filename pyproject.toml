@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eqtk"
+authors = [
+    {name = "Justin Bois", email = "bois@caltech.edu"},
+]
+maintainers = [
+    {name = "Justin Bois", email = "bois@caltech.edu"},
+]
+description = "Equilibrium toolkit"
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {file = "LICENSE.md"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+]
+
+requires-python = ">=3.6"
+dependencies = [
+    "numpy",
+    "pandas",
+]
+
+dynamic = ["version"]
+
+# Omit "packages" to use automatic discovery, which will omit doc/ and tests/
+# https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#automatic-discovery
+
+# include-package-data also defaults to true in pyproject.toml
+
+
+[project.urls]
+homepage = "https://eqtk.github.io/"
+source = "https://github.com/justinbois/eqtk"
+
+
+[tool.setuptools.dynamic]
+version = {attr = "eqtk.__version__"}
