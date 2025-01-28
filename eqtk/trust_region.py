@@ -5,9 +5,7 @@ import numpy as np
 
 from . import constants
 from . import linalg
-from . import numba_check
-
-have_numba, jit = numba_check.numba_check()
+from . numba_check import jit
 
 
 @jit("double[::1](double[::1], double[::1], double[:, ::1])", nopython=True)

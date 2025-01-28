@@ -4,10 +4,8 @@ import pandas as pd
 from . import parsers
 from . import trust_region
 from . import linalg
-from . import numba_check
+from . numba_check import jit
 from . import constants
-
-have_numba, jit = numba_check.numba_check()
 
 
 def solve(
