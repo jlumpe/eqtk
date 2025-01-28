@@ -1,9 +1,12 @@
 import json
-import pytest
+from pathlib import Path
 
 import numpy as np
 
 import eqtk
+
+
+TESTS_DIR = Path(__file__).parent
 
 
 def check_test_case(tc):
@@ -25,13 +28,13 @@ def check_test_case(tc):
 
 
 def test_nupack_design_failures():
-    with open("nupack_concentrations-design-failure.json", "r") as f:
+    with open(TESTS_DIR / "nupack_concentrations-design-failure.json", "r") as f:
         test_cases = json.load(f)
 
     for tc in test_cases:
         check_test_case(tc)
 
-    with open("nupack_concentrations-design-failure-2.json", "r") as f:
+    with open(TESTS_DIR / "nupack_concentrations-design-failure-2.json", "r") as f:
         test_cases = json.load(f)
 
     for tc in test_cases:
